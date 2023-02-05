@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class scenewin : MonoBehaviour
+{
+    public GameObject cam1;
+    public GameObject cam2;
+    public GameObject screenwin;
+    public GameObject apple;
+    private void OnTriggerEnter(Collider other)
+    {
+    
+        if (other.gameObject.tag == "Player")
+        {
+            screenwin.SetActive(true);
+            cam1.SetActive(false);
+            cam2.SetActive(true);
+            Destroy(other.gameObject);
+            apple.SetActive(true);
+        }
+        
+
+    }
+}
